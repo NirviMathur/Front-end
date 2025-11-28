@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic CSS</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        #msg {
+            font-size: 18px;
+            color: black;
+            padding: 10px;
+        }
+        button {
+            padding: 8px 15px;
+            margin-top: 15px;
+            background: #ff9e9e;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<p id="msg">Click the button to change my style dynamically.</p>
+<button id="change">Change Style</button>
+
+<script>
+    $("#change").click(function () {
+        $("#msg").css({
+            "color": "#fff",
+            "background": "#ff4e4e",
+            "font-size": "22px",
+            "padding": "15px",
+            "border-radius": "6px",
+            "text-align": "center"
+        });
+    });
+</script>
+
+</body>
+</html>

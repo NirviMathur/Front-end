@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- ✅ Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #202020;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  background-color: #b5b5b5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 25px;
+}
+
+header p {
+  font-size: 22px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ef233c;
+  font-weight: 800;
+}
+
+header .header a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-left: 25px;
+}
+
+header .header a:hover {
+  color: #ef233c;
+  transition: 0.3s;
+}
+
+/* Main Section */
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 80px;
+  gap: 50px;
+  min-height: 80vh; /* keeps space before footer */
+}
+
+.intro {
+  flex: 1;
+}
+
+#name {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+#name span {
+  color: #ef233c;
+}
+
+#line-1 {
+  font-size: 20px;
+  line-height: 1.7;
+  max-width: 600px;
+  text-align: justify;
+  color: #dcdcdc;
+}
+
+#line-1 span {
+  color: #ef233c;
+  font-weight: bold;
+}
+
+#line-1 strong {
+  color: #f08804;
+  font-weight: 700;
+}
+
+/* Profile Picture */
+.profile-picture {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profile-picture img {
+  max-width: 420px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Footer Contact Bar */
+.contact-bar {
+  background: #111;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.contact-bar h1 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #ef233c;
+}
+
+/* Icons Section */
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.icons div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  color: #b5b5b5;
+  transition: 0.3s;
+}
+
+.icons i {
+  color: #ef233c;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.icons div:hover {
+  color: #f08804; /* text hover */
+}
+
+.icons div:hover i {
+  color: #f08804; /* icon hover */
+  transform: scale(1.2);
+}
+</style>
+<body>
+  <!-- Header -->
+  <header>
+    <p>Portfolio</p>
+    <div class="header">
+      <a href="#" id="home">Home</a>
+      <a href="#" id="Education">Education</a>
+      <a href="#" id="contact">Contact</a>
+      <a href="#" id="About">About</a>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <section class="main">
+    <div class="intro">
+      <h1 id="name">Hi, I'm <span>Nirvi Mathur</span></h1>
+      <p id="line-1">
+        I am a <strong>Computer Science Student</strong> at GLA University with a passion for
+        <span>web development</span>, <span>competitive programming</span>, and <span>creative design</span>.
+        I love exploring new technologies, building projects that solve real problems,
+        and continuously improving my skills to grow as a professional.
+      </p>
+    </div>
+
+    <div class="profile-picture">
+      <img src="Rectangle 1 (1).png" alt="Profile Picture">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="contact-bar">
+    <h1>Contact Me</h1>
+    <div class="icons">
+      <div>
+        <i class="fa-solid fa-phone"></i> <span>+91 905*</span>
+      </div>
+      <div>
+        <i class="fa-brands fa-instagram"></i> <span>@yourhandle</span>
+      </div>
+      <div>
+        <i class="fa-brands fa-linkedin-in"></i> <span>linkedin.com/in/yourname</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

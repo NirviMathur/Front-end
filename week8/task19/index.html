@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FAQ Section</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f4f6fa;
+        }
+
+        .faq-container {
+            width: 65%;
+            margin: 50px auto;
+        }
+
+        .question {
+            background: #e8effd;
+            color: #2a4a73;
+            padding: 15px;
+            margin-top: 12px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .question:hover {
+            background: #d8e5ff;
+        }
+
+        .answer {
+            background: #ffffff;
+            color: #4b5871;
+            padding: 14px;
+            border-left: 4px solid #7fa4dd;
+            border-radius: 0 0 8px 8px;
+            border-top: none;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+            display: none;
+            font-size: 16px;
+        }
+
+        .question.active {
+            background: #cbd9f5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="faq-container">
+    <div class="question">Q1. What is jQuery?</div>
+    <div class="answer">jQuery is a JavaScript library that makes HTML DOM manipulation easier.</div>
+
+    <div class="question">Q2. What is .slideToggle() used for?</div>
+    <div class="answer">slideToggle() shows or hides an element with a smooth sliding animation.</div>
+
+    <div class="question">Q3. Is jQuery still relevant?</div>
+    <div class="answer">Yes, it is still used in many websites for animations and DOM manipulation.</div>
+
+    <div class="question">Q4. Can I use jQuery with React or Angular?</div>
+    <div class="answer">Yes, but it’s not recommended because those frameworks already manage the DOM.</div>
+</div>
+
+<script>
+    $(".question").click(function () {
+        $(this).toggleClass("active");
+        $(this).next(".answer").slideToggle(300);
+    });
+</script>
+
+</body>
+</html>

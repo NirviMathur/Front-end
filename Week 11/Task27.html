@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Task 27 - JSX & Babel</title>
+
+    <!-- React CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e8f0fe;
+            padding: 20px;
+        }
+        #root {
+            background: #ffffff;
+            padding: 20px;
+            width: 450px;
+            margin: auto;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0,0,0,0.15);
+        }
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const userName = "Nirvi";
+        const marks = 90;
+
+        function greeting(name) {
+            return "Welcome, " + name + "!";
+        }
+
+        function App() {
+            return (
+                <div>
+                    <h2>JSX Dynamic Greetings</h2>
+                    <p>{greeting(userName)}</p>
+                    <p>Your Marks: {marks}</p>
+                    <p>{marks >= 90 ? "Excellent Performance!" : "Keep Improving!"}</p>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f8ff;
+            text-align: center;
+            margin-top: 40px;
+        }
+        #box {
+            padding: 10px;
+            width: 250px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            width: 330px;
+            margin: auto;
+        }
+        li {
+            background: #dce8ff;
+            margin: 6px 0;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-radius: 5px;
+        }
+        button {
+            padding: 6px 10px;
+            border: none;
+            background: #4e7cff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .small {
+            font-size: 12px;
+            padding: 4px 6px;
+            background: #6c8dff;
+        }
+        .delete {
+            background: #ff5c5c;
+        }
+    </style>
+</head>
+<body>
+
+<h2>To-Do List App</h2>
+
+<input type="text" id="box" placeholder="Enter task">
+<button id="add">Add Task</button>
+
+<ul id="list"></ul>
+
+<script>
+    $("#add").click(function () {
+        let task = $("#box").val();
+        if (task.trim() === "") return;
+        $("#list").append(
+            `<li>
+                <input type="checkbox" class="check">
+                <span>${task}</span>
+                <button class="small up">▲</button>
+                <button class="small down">▼</button>
+                <button class="small delete">X</button>
+            </li>`
+        );
+        $("#box").val("");
+    });
+
+    $(document).on("change", ".check", function () {
+        $(this).siblings("span").css("text-decoration",
+            this.checked ? "line-through" : "none");
+    });
+
+    $(document).on("click", ".delete", function () {
+        $(this).parent().remove();
+    });
+
+    $(document).on("click", ".up", function () {
+        let item = $(this).parent();
+        item.prev().before(item);
+    });
+
+    $(document).on("click", ".down", function () {
+        let item = $(this).parent();
+        item.next().after(item);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creative Image Gallery</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #f9fbe7, #e1f5fe);
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #6a1b9a;
+            margin-bottom: 20px;
+        }
+
+        #galleryBox {
+            width: 650px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        #mainImage {
+            width: 100%;
+            height: 350px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 3px solid #8e24aa;
+        }
+
+        #thumbnails {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        #thumbnails img {
+            width: 100px;
+            height: 70px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+
+        #thumbnails img:hover {
+            transform: scale(1.1);
+            border: 2px solid #6a1b9a;
+        }
+    </style>
+</head>
+<body>
+
+<h1>✨ Creative Photo Gallery ✨</h1>
+
+<div id="galleryBox">
+    <img id="mainImage" src="https://picsum.photos/id/1003/600/350">
+
+    <div id="thumbnails">
+        <img src="https://picsum.photos/id/1003/600/350" data-full="https://picsum.photos/id/1003/600/350">
+        <img src="https://picsum.photos/id/1015/600/350" data-full="https://picsum.photos/id/1015/600/350">
+        <img src="https://picsum.photos/id/1020/600/350" data-full="https://picsum.photos/id/1020/600/350">
+        <img src="https://picsum.photos/id/1039/600/350" data-full="https://picsum.photos/id/1039/600/350">
+    </div>
+</div>
+
+<script>
+    document.getElementById("thumbnails").addEventListener("click", function(event) {
+        if (event.target.tagName === "IMG") {
+            let newSrc = event.target.getAttribute("data-full");
+            document.getElementById("mainImage").src = newSrc;
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎵 Creative Music Player</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="player">
+    <div class="cover-container">
+        <img id="cover" src="https://picsum.photos/200" alt="Album Cover">
+    </div>
+    <h2 id="title">Song Title</h2>
+    <audio id="audio"></audio>
+
+    <div class="controls">
+        <button id="prev">⏮️</button>
+        <button id="play">▶️</button>
+        <button id="next">⏭️</button>
+    </div>
+
+    <div class="seek-container">
+        <span id="current-time">0:00</span>
+        <input type="range" id="seek" value="0" min="0" step="1">
+        <span id="duration">0:00</span>
+    </div>
+
+    <ul id="playlist"></ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

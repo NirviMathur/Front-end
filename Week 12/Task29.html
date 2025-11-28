@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task 29 - Controlled Form</title>
+
+<style>
+    body { font-family: Arial; background: #f4f6ff; padding: 20px; }
+    h1 { text-align: center; }
+    .form-box {
+        background: white;
+        width: 350px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+    }
+    button {
+        width: 100%;
+        background: #005eff;
+        color: white;
+        padding: 10px;
+        margin-top: 15px;
+        border: none;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    button:hover { background: #003fb5; }
+    .output {
+        margin-top: 15px;
+        background: #eef2ff;
+        padding: 15px;
+        border-radius: 10px;
+    }
+</style>
+</head>
+
+<body>
+<h1>Contact Form</h1>
+
+<div class="form-box">
+    <input id="name" placeholder="Enter Name">
+    <input id="email" placeholder="Enter Email" type="email">
+    <textarea id="message" rows="4" placeholder="Enter Message"></textarea>
+    <button onclick="submitForm()">Submit</button>
+
+    <div id="output"></div>
+</div>
+
+<script>
+function submitForm() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    document.getElementById("output").innerHTML = `
+        <div class="output">
+            <b>Name:</b> ${name}<br>
+            <b>Email:</b> ${email}<br>
+            <b>Message:</b> ${message}
+        </div>
+    `;
+}
+</script>
+
+</body>
+</html>

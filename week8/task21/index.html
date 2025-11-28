@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Fade Animation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #dfd6ff;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #showBtn {
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background: #6a4bc7;
+            color: white;
+            cursor: pointer;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .login-box {
+            display: none;
+            width: 330px;
+            padding: 25px;
+            background: #ffffff;
+            border-radius: 10px;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        h2 {
+            color: #5a3ab5;
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 85%;
+            padding: 10px;
+            margin: 9px 0;
+            border-radius: 6px;
+            border: 1px solid #b6a9e9;
+            font-size: 15px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .btn-login {
+            width: 85%;
+            padding: 10px;
+            margin-top: 10px;
+            background: #5a3ab5;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        #closeBtn {
+            background: none;
+            border: none;
+            margin-top: 12px;
+            color: #5a3ab5;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<button id="showBtn">Open Login</button>
+
+<div id="overlay"></div>
+
+<div class="login-box" id="loginBox">
+    <h2>Login</h2>
+    <input type="text" placeholder="Username" id="username">
+    <input type="password" placeholder="Password" id="password">
+    <button class="btn-login" id="loginBtn">Login</button>
+    <button id="closeBtn">Close</button>
+</div>
+
+<script>
+    $("#showBtn").click(function () {
+        $("#overlay").fadeIn(300);
+        $("#loginBox").fadeIn(500);
+    });
+
+    $("#closeBtn, #overlay").click(function () {
+        $("#loginBox").fadeOut(400);
+        $("#overlay").fadeOut(400);
+    });
+
+    $("#loginBtn").click(function () {
+        alert("Login button clicked!");
+    });
+</script>
+
+</body>
+</html>

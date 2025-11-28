@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    color: #219ebc;
+    font-size: 40px;
+    align-items: center;
+    text-align: center;
+    text-decoration: underline;
+}
+h1:hover{
+    color: rgb(1, 1, 139);
+}
+
+ul{
+    padding-left: 50px;
+    font-size: 30px;
+}
+span{
+    background-color: #219ebc;
+     border-top-right-radius:50%;
+    border-top-left-radius:25%;
+    border-bottom-right-radius:25%;
+    border-bottom-left-radius:50%;
+}
+ol{
+    padding-left: 50px;
+    padding-top: 20px;
+    font-size: 30px;
+}
+strong{
+    color: #219ebc;
+    font-size: larger;
+}
+h2{
+    color: #63c9e2;
+    text-decoration: underline;
+}

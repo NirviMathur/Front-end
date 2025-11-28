@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Methods Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .box {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #444;
+            border-radius: 10px;
+            width: 450px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Array Methods Practice (map, filter, reduce, forEach)</h1>
+
+    <!-- MAP -->
+    <div class="box">
+        <h2>1. map() – Square Numbers</h2>
+        <button onclick="runMap()">Run map()</button>
+        <pre id="mapResult"></pre>
+    </div>
+
+    <!-- FILTER -->
+    <div class="box">
+        <h2>2. filter() – Keep Even Numbers</h2>
+        <button onclick="runFilter()">Run filter()</button>
+        <pre id="filterResult"></pre>
+    </div>
+
+    <!-- REDUCE -->
+    <div class="box">
+        <h2>3. reduce() – Sum of Numbers</h2>
+        <button onclick="runReduce()">Run reduce()</button>
+        <pre id="reduceResult"></pre>
+    </div>
+
+    <!-- FOREACH -->
+    <div class="box">
+        <h2>4. forEach() – Print Items</h2>
+        <button onclick="runForEach()">Run forEach()</button>
+        <pre id="forEachResult"></pre>
+    </div>
+
+    <script>
+        function runMap() {
+            let arr = [2, 4, 6, 8];
+            let squares = arr.map(num => num * num);
+            document.getElementById("mapResult").textContent =
+                "Input: " + JSON.stringify(arr) + "\nOutput: " + JSON.stringify(squares);
+        }
+
+        function runFilter() {
+            let arr = [1, 2, 3, 4, 5, 6];
+            let evens = arr.filter(n => n % 2 === 0);
+            document.getElementById("filterResult").textContent =
+                "Input: " + JSON.stringify(arr) + "\nOutput (evens): " + JSON.stringify(evens);
+        }
+
+        function runReduce() {
+            let arr = [10, 20, 30];
+            let sum = arr.reduce((acc, val) => acc + val, 0);
+            document.getElementById("reduceResult").textContent =
+                "Input: " + JSON.stringify(arr) + "\nSum: " + sum;
+        }
+
+        function runForEach() {
+            let arr = ["Apple", "Banana", "Grapes"];
+            let output = "";
+
+            arr.forEach((item, i) => {
+                output += i + " → " + item + "\n";
+            });
+
+            document.getElementById("forEachResult").textContent = output;
+        }
+    </script>
+
+</body>
+</html>

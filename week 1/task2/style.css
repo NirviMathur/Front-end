@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #202020;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  background-color: #b5b5b5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 25px;
+}
+
+header p {
+  font-size: 22px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ef233c;
+  font-weight: 800;
+}
+
+header .header a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-left: 25px;
+}
+
+header .header a:hover {
+  color: #ef233c;
+  transition: 0.3s;
+}
+
+/* Main Section */
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 80px;
+  gap: 50px;
+  min-height: 80vh; /* keeps space before footer */
+}
+
+.intro {
+  flex: 1;
+}
+
+#name {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+#name span {
+  color: #ef233c;
+}
+
+#line-1 {
+  font-size: 20px;
+  line-height: 1.7;
+  max-width: 600px;
+  text-align: justify;
+  color: #dcdcdc;
+}
+
+#line-1 span {
+  color: #ef233c;
+  font-weight: bold;
+}
+
+#line-1 strong {
+  color: #f08804;
+  font-weight: 700;
+}
+
+/* Profile Picture */
+.profile-picture {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profile-picture img {
+  max-width: 420px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Footer Contact Bar */
+.contact-bar {
+  background: #111;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.contact-bar h1 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #ef233c;
+}
+
+/* Icons Section */
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.icons div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  color: #b5b5b5;
+  transition: 0.3s;
+}
+
+.icons i {
+  color: #ef233c;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.icons div:hover {
+  color: #f08804; /* text hover */
+}
+
+.icons div:hover i {
+  color: #f08804; /* icon hover */
+  transform: scale(1.2);
+}

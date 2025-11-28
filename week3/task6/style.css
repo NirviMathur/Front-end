@@ -1,0 +1,83 @@
+/* General Page */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    background: #eef1f5;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background: #1e1e2e;
+    color: white;
+    height: 100vh;
+    padding: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+}
+
+/* Company Name */
+.company-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Menu */
+.menu .item {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+    color: #d7dae5;
+}
+
+/* Hover Effect */
+.menu .item:hover {
+    background: #353542;
+}
+
+/* Highlight Active Page */
+.menu .active {
+    background: #4c8bf5;
+    color: white;
+    font-weight: 600;
+}
+
+/* Footer */
+.footer {
+    font-size: 13px;
+    text-align: center;
+    opacity: 0.7;
+}
+
+/* Content Area */
+.content {
+    margin-left: 260px;
+    padding: 40px;
+}
+
+h1 {
+    color: #1e1e2e;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Functions • Closures • IIFE Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #fce4ec, #e1f5fe);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4a148c;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        .btn1 { background-color: #ffccbc; }
+        .btn2 { background-color: #c5cae9; }
+        .btn3 { background-color: #b2dfdb; }
+
+        .output {
+            margin-top: 15px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 10px;
+            background: #f9fbe7;
+            color: #33691e;
+        }
+    </style>
+</head>
+<body>
+
+<h1>✨ Beginner-Friendly Function Practice ✨</h1>
+
+
+<!-- FUNCTION CARD -->
+<div class="card">
+    <h2 style="color:#d81b60;">1️⃣ Simple Function Demo</h2>
+    <p>Click the button to run a simple function.</p>
+
+    <button class="btn1" onclick="simpleFunction()">Run Function</button>
+    <div id="funOutput" class="output"></div>
+</div>
+
+
+<!-- CLOSURE CARD -->
+<div class="card">
+    <h2 style="color:#3949ab;">2️⃣ Closure Example</h2>
+    <p>A closure remembers values even after the function is finished.</p>
+
+    <button class="btn2" onclick="closureDemo()">Run Closure</button>
+    <div id="closureOutput" class="output"></div>
+</div>
+
+
+<!-- IIFE CARD -->
+<div class="card">
+    <h2 style="color:#00897b;">3️⃣ IIFE (Immediately Invoked Function Expression)</h2>
+    <p>This function runs automatically as soon as the page loads!</p>
+
+    <button class="btn3" onclick="runIIFE()">Show IIFE Message Again</button>
+    <div id="iifeOutput" class="output"></div>
+</div>
+
+
+
+<script>
+
+    // --------------------- SIMPLE FUNCTION ---------------------
+    function simpleFunction() {
+        let message = "Hello! This is a simple function running 😊";
+        document.getElementById("funOutput").innerHTML = message;
+    }
+
+
+    // --------------------------- CLOSURE ------------------------
+    function closureDemo() {
+        function outerFunction() {
+            let count = 0;  // inner function remembers this
+            function innerFunction() {
+                count++;
+                return "Button clicked " + count + " time(s)";
+            }
+            return innerFunction; 
+        }
+
+        // create closure object only once
+        if (!window.closureCounter) {
+            window.closureCounter = outerFunction();
+        }
+
+        document.getElementById("closureOutput").innerHTML = window.closureCounter();
+    }
+
+
+    // ----------------------------- IIFE -------------------------
+    // Runs automatically when page loads
+    let iifeMessage = (function() {
+        return "IIFE ran automatically when the page loaded 🚀";
+    })();
+
+    function runIIFE() {
+        document.getElementById("iifeOutput").innerHTML = iifeMessage;
+    }
+
+    // show the IIFE output once when page starts
+    window.onload = () => runIIFE();
+
+</script>
+
+</body>
+</html>
